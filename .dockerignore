@@ -1,0 +1,17 @@
+node_modules
+.dockerignore
+.build
+.editorconfig
+.env.example
+.eslintignore
+.eslintrc.json
+.gitignore
+.lintstagedrc.json
+.prettierrc
+README.md
+.git
+docker-compose.yml
+Dockerfile*
+docker-compose*
+
+

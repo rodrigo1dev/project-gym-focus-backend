@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: 'gym_focus_api'
+    ports:
+      - ${PORT}:${PORT}
+    command: sh ./docker-entrypoint.sh
+    volumes:
+      - .:/usr/app/
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/gym_focus?schema=public
+    depends_on:
+      - 'postgres'
+    networks:
+      - gym_focus_backend
+
+  postgres:
+    image: postgres:15.4
+    container_name: gym_focus_postgres
+    volumes:
+      - db-data:/db/postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: gym_focus
+    ports:
+      - 5432:5432
+    networks:
+      - gym_focus_backend
+
+volumes:
+  db-data:
+
+
+networks:
+  gym_focus_backend:
+    driver: bridge

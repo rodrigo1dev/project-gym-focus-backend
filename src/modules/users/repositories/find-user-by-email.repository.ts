@@ -3,7 +3,7 @@ import { User } from '@prisma/client';
 import { PrismaService } from 'src/modules/shared/services';
 
 @Injectable()
-export class GetUserByEmailRepository {
+export class FindUserByEmailRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   async execute(email: string): Promise<User | null> {

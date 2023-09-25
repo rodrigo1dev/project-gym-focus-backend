@@ -7,4 +7,15 @@ export class HashProvider {
     const hashedValue = await bcryptjs.hash(valueToBeHashed, salt);
     return hashedValue;
   }
+
+  async compare(
+    valueToBeCompared: string,
+    hashedValue: string,
+  ): Promise<boolean> {
+    const comparedValue = await bcryptjs.compare(
+      valueToBeCompared,
+      hashedValue,
+    );
+    return comparedValue;
+  }
 }

@@ -1,24 +1,25 @@
-import { HttpService } from '@nestjs/axios';
-import { Injectable } from '@nestjs/common';
-import { firstValueFrom } from 'rxjs';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { LoginKeycloakService } from 'src/modules/keycloak/services/login.keycloak.service';
+import { HashProvider } from 'src/modules/shared/providers/hash-value.provider';
+import { FindUserByEmailRepository } from 'src/modules/users/repositories/find-user-by-email.repository';
 
 @Injectable()
 export class AuthService {
-  constructor(private http: HttpService) {}
+  constructor(
+    private readonly findUserByEmailRepository: FindUserByEmailRepository,
+    private readonly hashProvider: HashProvider,
+    private readonly loginKeycloakService: LoginKeycloakService,
+  ) {}
 
-  async login(username: string, password: string) {
-    const { data } = await firstValueFrom(
-      this.http.post(
-        `http://host.docker.internal:8080/realms/${process.env.REALM}/protocol/openid-connect/token`,
-        new URLSearchParams({
-          client_id: process.env.CLIENT_ID,
-          client_secret: process.env.CLIENT_SECRET,
-          grant_type: 'password',
-          username,
-          password,
-        }),
-      ),
-    );
-    return data;
+  async execute(email: string, password: string) {
+    const user = await this.findUserByEmailRepository.execute(email);
+    const passwordMatch =
+      user && (await this.hashProvider.compare(password, user.password));
+
+    if (!user || !passwordMatch) {
+      throw new BadRequestException('Email, or password is incorrect');
+    }
+    const data = await this.loginKeycloakService.execute(email, password);
+    return { user_id: user.id, data };
   }
 }

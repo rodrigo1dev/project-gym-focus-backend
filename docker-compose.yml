@@ -14,7 +14,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/gym_focus?schema=public
     depends_on:
-      - 'postgres'
+      - postgres
     networks:
       - gym_focus_backend
     extra_hosts:

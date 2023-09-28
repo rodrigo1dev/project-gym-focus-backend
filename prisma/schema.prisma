@@ -11,10 +11,46 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid())
-  email    String @unique
+  id       String    @id @default(uuid())
+  email    String    @unique
   name     String
   password String
+  Workout  Workout[]
 
   @@map("users")
+}
+
+model Workout {
+  id                  String       @id @default(uuid())
+  user                User         @relation(fields: [userId], references: [id])
+  userId              String       @map("user_id")
+  exerciseInfo        ExerciseInfo @relation(fields: [exerciseInfoId], references: [id])
+  exerciseInfoId      String       @map("exercise_info_id")
+  amountOfRepetitions Int          @map("amount_of_repetitions")
+  amountOfSeries      Int          @map("amount_of_series")
+  weight              Int
+  dayOfTheWeek        DayOfWeek    @map("day_of_the_week")
+  updatedAt           DateTime     @updatedAt @map("updated_at")
+  createdAt           DateTime     @default(now()) @map("created_at")
+
+  @@map("workouts")
+}
+
+enum DayOfWeek {
+  Monday
+  Tuesday
+  Wednesday
+  Thursday
+  Friday
+  Saturday
+  Sunday
+}
+
+model ExerciseInfo {
+  id       String    @id @default(uuid())
+  name     String
+  grouping String
+  Workout  Workout[]
+
+  @@map("exercise_infos")
 }

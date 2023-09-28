@@ -31,7 +31,6 @@ export class CreateUserKeycloakService {
           {
             enabled: true,
             username: email,
-            sub: '60cdaa63-895a-44da-8fba-b08ca2fbc2d1',
             email,
             credentials: [
               { type: 'password', value: password, temporary: false },

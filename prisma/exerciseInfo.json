@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Supino reto",
+    "grouping": "Peitoral"
+  },
+  {
+    "name": "Agachamento",
+    "grouping": "Pernas"
+  },
+  {
+    "name": "Pull-up",
+    "grouping": "Costas"
+  },
+  {
+    "name": "Crucifixo",
+    "grouping": "Peitoral"
+  },
+  {
+    "name": "Leg press",
+    "grouping": "Pernas"
+  },
+  {
+    "name": "Remada alta",
+    "grouping": "Costas"
+  },
+  {
+    "name": "Rosca direta",
+    "grouping": "Braços (Bíceps)"
+  },
+  {
+    "name": "Rosca inversa",
+    "grouping": "Braços (Bíceps)"
+  },
+  {
+    "name": "Desenvolvimento militar",
+    "grouping": "Ombros"
+  },
+  {
+    "name": "Abdominal crunch",
+    "grouping": "Abdômen"
+  },
+  {
+    "name": "Deadlift",
+    "grouping": "Costas e Pernas"
+  },
+  {
+    "name": "Elevação de panturrilhas",
+    "grouping": "Panturrilhas"
+  },
+  {
+    "name": "Flexão de tríceps",
+    "grouping": "Tríceps"
+  },
+  {
+    "name": "Avanço",
+    "grouping": "Pernas"
+  },
+  {
+    "name": "Pull-down",
+    "grouping": "Costas"
+  },
+  {
+    "name": "Hiperextensão lombar",
+    "grouping": "Lombar"
+  },
+  {
+    "name": "Elevação frontal",
+    "grouping": "Ombros"
+  },
+  {
+    "name": "Flexão de braços",
+    "grouping": "Peitoral"
+  },
+  {
+    "name": "Rosca Scott",
+    "grouping": "Braços (Bíceps)"
+  },
+  {
+    "name": "Prancha",
+    "grouping": "Abdômen"
+  },
+  {
+    "name": "Agachamento sumô",
+    "grouping": "Pernas"
+  },
+  {
+    "name": "Puxada alta",
+    "grouping": "Costas"
+  },
+  {
+    "name": "Tríceps coice",
+    "grouping": "Tríceps"
+  },
+  {
+    "name": "Cadeira extensora",
+    "grouping": "Quadríceps"
+  },
+  {
+    "name": "Flexão diamante",
+    "grouping": "Peitoral"
+  },
+  {
+    "name": "Pulldown invertido",
+    "grouping": "Costas"
+  },
+  {
+    "name": "Rosca martelo",
+    "grouping": "Braços (Bíceps)"
+  },
+  {
+    "name": "Elevação lateral",
+    "grouping": "Ombros"
+  },
+  {
+    "name": "Crunch com bola suíça",
+    "grouping": "Abdômen"
+  },
+  {
+    "name": "Stiff",
+    "grouping": "Pernas"
+  },
+  {
+    "name": "Puxada na polia alta",
+    "grouping": "Costas"
+  },
+  {
+    "name": "Extensão de tríceps",
+    "grouping": "Tríceps"
+  },
+  {
+    "name": "Cadeira flexora",
+    "grouping": "Isquiotibiais"
+  },
+  {
+    "name": "Flexão declinada",
+    "grouping": "Peitoral"
+  },
+  {
+    "name": "Halteres de ombro",
+    "grouping": "Ombros"
+  },
+  {
+    "name": "Abdominal na máquina",
+    "grouping": "Abdômen"
+  },
+  {
+    "name": "Afundo",
+    "grouping": "Pernas"
+  },
+  {
+    "name": "Remada baixa",
+    "grouping": "Costas"
+  },
+  {
+    "name": "Rosca 21",
+    "grouping": "Braços (Bíceps)"
+  },
+  {
+    "name": "Desenvolvimento com halteres",
+    "grouping": "Ombros"
+  },
+  {
+    "name": "Prancha lateral",
+    "grouping": "Abdômen"
+  },
+  {
+    "name": "Leg curl",
+    "grouping": "Isquiotibiais"
+  },
+  {
+    "name": "Flexão inclinada",
+    "grouping": "Peitoral"
+  },
+  {
+    "name": "Puxada na polia baixa",
+    "grouping": "Costas"
+  },
+  {
+    "name": "Tríceps testa",
+    "grouping": "Tríceps"
+  },
+  {
+    "name": "Cadeira adutora",
+    "grouping": "Adutores"
+  },
+  {
+    "name": "Rosca concentrada",
+    "grouping": "Braços (Bíceps)"
+  },
+  {
+    "name": "Elevação frontal com halteres",
+    "grouping": "Ombros"
+  },
+  {
+    "name": "Abdominal inverso",
+    "grouping": "Abdômen"
+  },
+  {
+    "name": "Agachamento búlgaro",
+    "grouping": "Pernas"
+  }
+]

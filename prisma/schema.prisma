@@ -21,17 +21,18 @@ model User {
 }
 
 model Workout {
-  id                  String       @id @default(uuid())
-  user                User         @relation(fields: [userId], references: [id])
-  userId              String       @map("user_id")
-  exerciseInfo        ExerciseInfo @relation(fields: [exerciseInfoId], references: [id])
-  exerciseInfoId      String       @map("exercise_info_id")
-  amountOfRepetitions Int          @map("amount_of_repetitions")
-  amountOfSeries      Int          @map("amount_of_series")
+  id                  String              @id @default(uuid())
+  user                User                @relation(fields: [userId], references: [id])
+  userId              String              @map("user_id")
+  exerciseInfo        ExerciseInfo        @relation(fields: [exerciseInfoId], references: [id])
+  exerciseInfoId      String              @map("exercise_info_id")
+  amountOfRepetitions Int                 @map("amount_of_repetitions")
+  amountOfSeries      Int                 @map("amount_of_series")
   weight              Int
-  dayOfTheWeek        DayOfWeek    @map("day_of_the_week")
-  updatedAt           DateTime     @updatedAt @map("updated_at")
-  createdAt           DateTime     @default(now()) @map("created_at")
+  dayOfTheWeek        DayOfWeek           @map("day_of_the_week")
+  updatedAt           DateTime            @updatedAt @map("updated_at")
+  createdAt           DateTime            @default(now()) @map("created_at")
+  Workout_histories   Workout_histories[]
 
   @@map("workouts")
 }
@@ -53,4 +54,16 @@ model ExerciseInfo {
   Workout  Workout[]
 
   @@map("exercise_infos")
+}
+
+model Workout_histories {
+  id                  String   @id @default(uuid())
+  workoutId           String
+  workout             Workout  @relation(fields: [workoutId], references: [id])
+  amountOfRepetitions Int?     @map("amount_of_repetitions")
+  amountOfSeries      Int?     @map("amount_of_series")
+  weight              Int?
+  createdAt           DateTime @default(now()) @map("created_at")
+
+  @@map("workout_histories")
 }

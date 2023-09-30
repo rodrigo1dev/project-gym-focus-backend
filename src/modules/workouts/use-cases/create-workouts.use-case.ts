@@ -20,9 +20,11 @@ export class CreateWorkoutsUseCase {
         user.id,
         data.exerciseInfoId,
       );
-
-    if (workout) {
-      throw new BadRequestException('Workout already exists');
+    console.log(data.dayOfTheWeek);
+    if (workout?.dayOfTheWeek && workout?.dayOfTheWeek === data.dayOfTheWeek) {
+      throw new BadRequestException(
+        'Workout already exists in this day of the week, update or create in another day',
+      );
     }
 
     await this.createWorkoutsRepository.execute({

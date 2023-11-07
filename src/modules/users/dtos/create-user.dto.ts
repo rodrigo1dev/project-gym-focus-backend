@@ -4,6 +4,7 @@ export interface createUserDTO {
   name: string;
   email: string;
   password: string;
+  code: string;
 }
 
 export class createUserValidator {
@@ -17,4 +18,7 @@ export class createUserValidator {
   @IsString()
   @MinLength(4)
   password: string;
+
+  @IsString()
+  code: string;
 }

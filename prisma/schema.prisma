@@ -67,3 +67,11 @@ model Workout_histories {
 
   @@map("workout_histories")
 }
+
+model EmailValidation {
+  id    String @id @default(uuid())
+  email String @unique
+  code  String
+
+  @@map("email_validations")
+}

@@ -1,4 +1,4 @@
-import { DayOfWeek } from '@prisma/client';
+import { Division } from '@prisma/client';
 import {
   IsEnum,
   IsNotEmpty,
@@ -11,7 +11,7 @@ export interface updateWorkoutDTO {
   workoutId: string;
   amountOfRepetitions: number;
   amountOfSeries: number;
-  dayOfTheWeek: DayOfWeek;
+  division: Division;
   weight: number;
 }
 
@@ -29,8 +29,8 @@ export class updateWorkoutValidator {
   amountOfSeries: number;
 
   @IsOptional()
-  @IsEnum(DayOfWeek)
-  dayOfTheWeek: DayOfWeek;
+  @IsEnum(Division)
+  division: Division;
 
   @IsOptional()
   @IsNumber()

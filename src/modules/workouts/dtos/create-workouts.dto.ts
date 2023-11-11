@@ -1,11 +1,11 @@
-import { DayOfWeek } from '@prisma/client';
+import { Division } from '@prisma/client';
 import { IsEnum, IsNumber, IsString } from 'class-validator';
 
 export interface createWorkoutServiceDTO {
   exerciseInfoId: string;
   amountOfRepetitions: number;
   amountOfSeries: number;
-  dayOfTheWeek: DayOfWeek;
+  division: Division;
   weight: number;
 }
 
@@ -14,7 +14,7 @@ export interface createWorkoutRepositoryDTO {
   exerciseInfoId: string;
   amountOfRepetitions: number;
   amountOfSeries: number;
-  dayOfTheWeek: DayOfWeek;
+  division: Division;
   weight: number;
 }
 
@@ -28,8 +28,8 @@ export class createWorkoutValidator {
   @IsNumber()
   amountOfSeries: number;
 
-  @IsEnum(DayOfWeek)
-  dayOfTheWeek: DayOfWeek;
+  @IsEnum(Division)
+  division: Division;
 
   @IsNumber()
   weight: number;

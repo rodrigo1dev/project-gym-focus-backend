@@ -13,7 +13,7 @@ export class CreateWorkoutsRepository {
         exerciseInfoId: data.exerciseInfoId,
         amountOfRepetitions: data.amountOfRepetitions,
         amountOfSeries: data.amountOfSeries,
-        dayOfTheWeek: data.dayOfTheWeek,
+        division: data.division,
         weight: data.weight,
       },
     });

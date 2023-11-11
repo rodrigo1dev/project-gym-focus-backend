@@ -29,7 +29,7 @@ model Workout {
   amountOfRepetitions Int                 @map("amount_of_repetitions")
   amountOfSeries      Int                 @map("amount_of_series")
   weight              Int
-  dayOfTheWeek        DayOfWeek           @map("day_of_the_week")
+  division            Division            @map("division")
   updatedAt           DateTime            @updatedAt @map("updated_at")
   createdAt           DateTime            @default(now()) @map("created_at")
   Workout_histories   Workout_histories[]
@@ -37,14 +37,14 @@ model Workout {
   @@map("workouts")
 }
 
-enum DayOfWeek {
-  Monday
-  Tuesday
-  Wednesday
-  Thursday
-  Friday
-  Saturday
-  Sunday
+enum Division {
+  A
+  B
+  C
+  D
+  E
+  F
+  G
 }
 
 model ExerciseInfo {

@@ -3,6 +3,7 @@ import { UsersModule } from '../users/users.module';
 import { WorkoutsController } from './controllers/workouts.controller';
 import { CreateWorkoutHistoriesRepository } from './repositories/create-workout-historic.repository';
 import { CreateWorkoutsRepository } from './repositories/create-workouts.repository';
+import { FindExerciseInfoRepository } from './repositories/find-exercise-info.repository';
 import { FindWorkoutsByUserIdAndExerciseIdRepository } from './repositories/find-workout-by-id.repository';
 import { UpdateWorkoutsRepository } from './repositories/update-workouts.repository';
 import { CreateWorkoutHistoricService } from './services/create-workout-historic.service';
@@ -20,6 +21,7 @@ import { UpdateWorkoutsUseCase } from './use-cases/update-workout.use-case';
     UpdateWorkoutsUseCase,
     CreateWorkoutHistoricService,
     CreateWorkoutHistoriesRepository,
+    FindExerciseInfoRepository,
   ],
 })
 export class WorkoutsModule {}

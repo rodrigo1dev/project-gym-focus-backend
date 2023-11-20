@@ -1,4 +1,4 @@
-import { IsEmail, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
 export interface emailVerificationDTO {
   email: string;
@@ -7,5 +7,6 @@ export interface emailVerificationDTO {
 export class emailVerificationValidator {
   @IsString()
   @IsEmail()
+  @IsNotEmpty()
   email: string;
 }

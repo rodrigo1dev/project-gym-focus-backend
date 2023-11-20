@@ -4,6 +4,7 @@ import {
   Get,
   Patch,
   Post,
+  Query,
   Req,
   UseGuards,
 } from '@nestjs/common';
@@ -42,11 +43,11 @@ export class WorkoutsController {
   @UseGuards(JwtGuard)
   async findAllWorkoutByDivision(
     @Req() req,
-    @Body() requestBody: findAllWorkoutByDivisionValidator,
+    @Query() queryParam: findAllWorkoutByDivisionValidator,
   ) {
     return await this.findAllWorkoutByDivisionUseCase.execute(
       req.user.email,
-      requestBody.division,
+      queryParam.division,
     );
   }
 }

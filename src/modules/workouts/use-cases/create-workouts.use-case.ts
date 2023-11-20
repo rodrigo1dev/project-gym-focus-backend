@@ -25,15 +25,15 @@ export class CreateWorkoutsUseCase {
 
     const user = await this.findUserByEmailRepository.execute(email);
 
-    const workout =
+    const existingWorkout =
       await this.findWorkoutsByUserIdAndExerciseIdRepository.execute(
         user.id,
         data.exerciseInfoId,
       );
 
-    if (workout?.division && workout?.division === data.division) {
+    if (existingWorkout.some((workout) => workout.division === data.division)) {
       throw new BadRequestException(
-        'Workout already exists in this division, update or create in another division',
+        'Workout with the same exerciseInfoId and division already exists',
       );
     }
 

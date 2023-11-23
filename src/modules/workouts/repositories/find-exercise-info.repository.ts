@@ -14,4 +14,16 @@ export class FindExerciseInfoRepository {
     });
     return exerciseInfo;
   }
+
+  async FindByName(name: string): Promise<ExerciseInfo[]> {
+    const exerciseInfo = await this.prisma.exerciseInfo.findMany({
+      where: {
+        name: {
+          contains: name,
+          mode: 'insensitive',
+        },
+      },
+    });
+    return exerciseInfo;
+  }
 }

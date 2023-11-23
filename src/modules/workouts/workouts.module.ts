@@ -10,6 +10,7 @@ import { UpdateWorkoutsRepository } from './repositories/update-workouts.reposit
 import { CreateWorkoutHistoricService } from './services/create-workout-historic.service';
 import { CreateWorkoutsUseCase } from './use-cases/create-workouts.use-case';
 import { FindAllWorkoutByDivisionUseCase } from './use-cases/find-all-workouts-by-division.use-case';
+import { FindExerciseInfoByNameUseCase } from './use-cases/find-exercise-info-by-name.use-case';
 import { UpdateWorkoutsUseCase } from './use-cases/update-workout.use-case';
 
 @Module({
@@ -26,6 +27,7 @@ import { UpdateWorkoutsUseCase } from './use-cases/update-workout.use-case';
     FindExerciseInfoRepository,
     FindAllWorkoutByDivisionRepository,
     FindAllWorkoutByDivisionUseCase,
+    FindExerciseInfoByNameUseCase,
   ],
 })
 export class WorkoutsModule {}

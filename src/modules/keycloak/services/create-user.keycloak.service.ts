@@ -11,7 +11,7 @@ export class CreateUserKeycloakService {
     try {
       const response = await firstValueFrom(
         this.http.post(
-          `http://host.docker.internal:8080/realms/master/protocol/openid-connect/token`,
+          `${process.env.KEYCLOAK_URL}/realms/master/protocol/openid-connect/token`,
           new URLSearchParams({
             grant_type: 'client_credentials',
             client_id: 'admin-cli',
@@ -27,7 +27,7 @@ export class CreateUserKeycloakService {
       };
       const { data } = await firstValueFrom(
         this.http.post(
-          `http://host.docker.internal:8080/admin/realms/gym-focus/users`,
+          `${process.env.KEYCLOAK_URL}/admin/realms/gym-focus/users`,
           {
             enabled: true,
             username: email,

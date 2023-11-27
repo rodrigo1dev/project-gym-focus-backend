@@ -9,7 +9,7 @@ export class RefreshTokenKeycloakService {
   async execute(refresh_token: string) {
     const { data } = await firstValueFrom(
       this.http.post(
-        `http://host.docker.internal:8080/realms/gym-focus/protocol/openid-connect/token`,
+        `${process.env.KEYCLOAK_URL}/realms/gym-focus/protocol/openid-connect/token`,
         new URLSearchParams({
           client_id: 'gym-focus-client',
           client_secret: process.env.GYM_FOCUS_CLIENT_SECRET,

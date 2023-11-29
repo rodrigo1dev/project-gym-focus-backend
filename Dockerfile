@@ -1,17 +1,28 @@
-FROM node:18.17-alpine3.17
+FROM node:16.13.1-alpine AS base
 
-WORKDIR /usr/app/
+WORKDIR /app
 
-COPY package.json .
-COPY yarn.lock .
-COPY prisma ./prisma/
+COPY . /app
 
+FROM base as build
 
-RUN npm install -g @nestjs/cli
-RUN yarn install
+RUN yarn install --silent
 
-COPY . .
+RUN yarn run prebuild
+RUN yarn run build
+
+FROM base as release
+WORKDIR /build
+
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/package.json .
+COPY --from=build /app/tsconfig.build.json .
+
+RUN chown -R node:node /build
+
+USER node
 
 EXPOSE $PORT
 
-CMD ["yarn", "start"]
+CMD ["npm", "run", "start"]

@@ -1,4 +1,4 @@
-FROM node:16.13.1-alpine AS base
+FROM node:18.17-alpine3.17
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ COPY . /app
 
 FROM base as build
 
-RUN yarn install --silent
+RUN yarn install
 
 RUN yarn run prebuild
 RUN yarn run build

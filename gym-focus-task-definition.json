@@ -29,7 +29,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "257288304027.dkr.ecr.us-east-1.amazonaws.com/project-gym-focus-backend",
+      "image": "257288304027.dkr.ecr.sa-east-1.amazonaws.com/project-gym-focus-backend",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -52,11 +52,8 @@
   "placementConstraints": [],
   "memory": null,
   "taskRoleArn": null,
-  "compatibilities": [
-    "EXTERNAL",
-    "EC2"
-  ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:257288304027:task-definition/gym-focus-task-definition:1",
+  "compatibilities": ["EXTERNAL", "EC2"],
+  "taskDefinitionArn": "arn:aws:ecs:sa-east-1:257288304027:task-definition/gym-focus-task-definition:1",
   "family": "gym-focus-task-definition",
   "requiresAttributes": [
     {
@@ -67,9 +64,7 @@
     }
   ],
   "pidMode": null,
-  "requiresCompatibilities": [
-    "EC2"
-  ],
+  "requiresCompatibilities": ["EC2"],
   "networkMode": null,
   "runtimePlatform": null,
   "cpu": null,
